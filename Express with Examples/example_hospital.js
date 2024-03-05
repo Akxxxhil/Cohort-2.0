@@ -49,4 +49,29 @@ app.post("/", function (req, res) {
   });
 });
 
+app.put("/",function(req,res){
+  for (let i=0;i<users[0].kideny.length;i++){
+    users[0].kideny[i].healthy=true
+  }
+  res.json({
+    msg:"value changed"
+  })
+})
+
+app.delete("/",function (req,res){
+  let newKidneys=[]
+  for(let i=0;i<users[0].kideny.length;i++){
+    if(users[0].kideny[i].healthy){
+      newKidneys.push({
+        healthy:true
+      })
+    }
+  }
+  users[0].kideny=newKidneys
+  res.json({
+    msg:"all kidenys are healthy now"
+  })
+})
+
+
 app.listen(3005);
