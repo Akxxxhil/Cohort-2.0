@@ -10,4 +10,10 @@ app.post("/",function(req,res){
     res.send("you have " + kidenylength)
 })
 
-app.listen(3001)
+
+app.use(function(err,req,res,next){
+    res.json({
+        msg:"something is wrong with the inputs"
+    })
+})
+app.listen(3002)
