@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="getthedata()">Get the Data</button>
+
+    <script>
+       //function getthedata() {
+           // console.log("button is clicked")
+           // const response = fetch("https://datausa.io/api/data?drilldowns=Nation&measures=Population")
+          //  .then(function(response){
+              //const answer= response.json()
+          //    .then(function (finaldata){
+            //    console.log(finaldata)
+          //    })
+          //  })
+      //  }
+      async function getthedata() {
+        const response=await fetch("https://datausa.io/api/data?drilldowns=Nation&measures=Population");
+        const output=await response.json()
+        console.log(output)
+
+      }
+     
+
+    </script>
+</body>
+
+</html>
